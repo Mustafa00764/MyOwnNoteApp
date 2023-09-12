@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/mainColor"
+    tools:context=".ui.fragments.HomeFragment">
+
+   <com.google.android.material.appbar.AppBarLayout
+       android:layout_width="match_parent"
+       android:background="@color/mainColor"
+       android:layout_height="wrap_content">
+
+      <androidx.appcompat.widget.Toolbar
+          android:layout_width="match_parent"
+          android:layout_height="?actionBarSize">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:gravity="center_vertical"
+             android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:text="@string/notes"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="43sp"
+                android:layout_height="wrap_content"/>
+            
+            <LinearLayout
+                android:id="@+id/ll_search"
+                android:layout_width="50dp"
+                android:gravity="center"
+                android:background="@drawable/ll_dg"
+                android:layout_height="50dp">
+
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                  android:src="@drawable/ic_search"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_info"
+                android:layout_width="50dp"
+                android:gravity="center"
+                android:background="@drawable/ll_dg"
+                android:layout_marginHorizontal="15dp"
+                android:layout_height="50dp">
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/ic_info"/>
+            </LinearLayout>
+         </LinearLayout>
+
+      </androidx.appcompat.widget.Toolbar>
+
+   </com.google.android.material.appbar.AppBarLayout>
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <LinearLayout
+          android:id="@+id/ll_empty"
+          android:layout_width="match_parent"
+          android:gravity="center"
+          android:visibility="gone"
+          android:layout_height="match_parent">
+         <ImageView
+             android:layout_width="250dp"
+             android:layout_height="250dp"
+             android:scaleType="centerCrop"
+             android:adjustViewBounds="true"
+             android:src="@drawable/img_empty"/>
+      </LinearLayout>
+
+   <androidx.recyclerview.widget.RecyclerView
+       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+       android:layout_width="match_parent"
+       android:visibility="visible"
+       android:id="@+id/rv_notes"
+       android:layout_height="match_parent"/>
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/b_add"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+         android:layout_margin="20dp"
+          android:src="@drawable/ic_add"
+          android:background="@color/black"
+          app:backgroundTint="@null"
+          app:tint="@color/white"
+         android:layout_gravity="bottom|end"/>
+   </FrameLayout>
+</LinearLayout>
